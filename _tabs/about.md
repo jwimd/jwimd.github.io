@@ -24,7 +24,7 @@ CG也有些兴趣:)
 
 ## 科研
 
-最近在和网安中心的xjygg（超大佬）做fuxx（os debug方向
+最近在和网安中心的xjygg（超大佬）做fuzz（os debug方向
 
 AI也有在搞（本人没什么动力 orz
 
