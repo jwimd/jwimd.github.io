@@ -48,7 +48,7 @@ pass
 
 Three components: fuzzing logic, VM infrastructure(QEMU-PT & KVM-pt), user mode agent 
 
-![](../assets/img/pictures/2023-02-15-Hardware_Assisted_Feedback_Fuzzing_for_OS_Kernels/0.png)
+![](../assets/img/pictures/2023-02-15-Hardware-Assisted-Feedback-Fuzzing-for-OS-Kernels/0.png)
 
 1. the loader(part of user agent) use hypercall `HC_SUBMIT_PANIC `to submit the address of kernel panic handler to QEMU-PT, allowing to **get crash immediately**(not until reboot or shut down)
 1. the loader use `HC_GET_PROGRAM` to request actual user mode agent and starts it
@@ -59,7 +59,7 @@ Three components: fuzzing logic, VM infrastructure(QEMU-PT & KVM-pt), user mode 
 1. While fuzzing, QEMU-PT decoder trace data and update bitmap. Once interact finish and agent get control from kernel, agent call `HC_FINISHED` resulting VM-Exit stops the tracing and QEMU-PT decodes the remaining trace data 
 1. bitmap pass to the kAFL
 
-![](../assets/img/pictures/2023-02-15-Hardware_Assisted_Feedback_Fuzzing_for_OS_Kernels/1.png)
+![](../assets/img/pictures/2023-02-15-Hardware-Assisted-Feedback-Fuzzing-for-OS-Kernels/1.png)
 
 ### 3.1 Fuzzing Logic
 
@@ -131,7 +131,7 @@ In case the second buffer also overflows, the following trace will contain a pac
 
 > I do not understand why design two buffer. Can not totally avoid overflow
 
-![](../assets/img/pictures/2023-02-15-Hardware_Assisted_Feedback_Fuzzing_for_OS_Kernels/2.png)
+![](../assets/img/pictures/2023-02-15-Hardware-Assisted-Feedback-Fuzzing-for-OS-Kernels/2.png)
 
 ### 4.2 QEMU-PT
 
@@ -140,7 +140,7 @@ QEMU-PT's effort:
 - Fully supply for KVM-PT
 - Decoder for trace data -Intel PT datapacket to bitmap
 
-![](../assets/img/pictures/2023-02-15-Hardware_Assisted_Feedback_Fuzzing_for_OS_Kernels/3.png)
+![](../assets/img/pictures/2023-02-15-Hardware-Assisted-Feedback-Fuzzing-for-OS-Kernels/3.png)
 
 #### 4.2.1 PT Decoder
 
@@ -172,7 +172,7 @@ Running on Windows, LInux and MacOS. We focus on Linux
 
 obtained significantly better coverage and managed to discover 160 unique crashes and multiple (confirmed) bugs in the ext4 driver during a twelve-day fuzzing campaign.
 
-![](../assets/img/pictures/2023-02-15-Hardware_Assisted_Feedback_Fuzzing_for_OS_Kernels/4.png)
+![](../assets/img/pictures/2023-02-15-Hardware-Assisted-Feedback-Fuzzing-for-OS-Kernels/4.png)
 
 Detected Vulnerabilities:
 

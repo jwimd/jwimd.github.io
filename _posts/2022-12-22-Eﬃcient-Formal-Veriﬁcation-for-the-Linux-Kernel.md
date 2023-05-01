@@ -80,7 +80,7 @@ updating
 
 文章的主要研究思路如下：
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/0.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/0.png)
 
 1.用自动机为Linux内核某一个部分的行为建模
 
@@ -88,7 +88,7 @@ updating
 
 该自动机描述了当抢占被启用时，不能执行sched_waking
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/1.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/1.png)
 
 2.使用**dot2c**工具将.dot文件转换为C语言数据结构
 
@@ -96,13 +96,13 @@ updating
 
 funtion对event和state的转换速度为O(1)，使用matrix也不会占用过大的空间，自动机需要定义的改变变量只有当前的状态变量，可以轻松地使用原子操作进行处理
 
-![](../assets/img/pictures/2023-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/2.png)
+![](../assets/img/pictures/2023-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/2.png)
 
 3.来自自动机的自动生成代码，以及一组将每个自动机事件与内核事件关联的辅助函数，被编译成一个内核模块（一个.ko文件）
 
 这里作者还展示了一种更加复杂的自动机，在之前的自动机中仅仅使用tracepoint进行tracing，在追踪SWA时同时使用了function tracer
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/3.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/3.png)
 
 > SWA（Sleeping While in Atomic）是一个有关Linux内核安全的概念，意为“原子状态下睡眠”。它描述了一种不安全的内核编程模式，当一个进程处于原子上下文（例如，禁止中断或禁止抢占）时，进程会因等待某些条件（如互斥锁或信号量）而被阻塞。由于原子上下文不允许调度器切换进程，这种情况可能导致死锁、性能下降或系统崩溃等问题。
 
@@ -112,7 +112,7 @@ funtion对event和state的转换速度为O(1)，使用matrix也不会占用过�
 
 下图是其发现error时的打印信息：发现在抢占调度发生时发生了不应该发生的事件sched_waking
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/4.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/4.png)
 
 ### 4.2 Bug Description
 
@@ -120,7 +120,7 @@ funtion对event和state的转换速度为O(1)，使用matrix也不会占用过�
 
 如果IRQ发生在线程禁用抢占和追踪禁用事件之间，preempt_irq很有可能会错过在IRQ中发生的抢占禁用。可能的解决方案是在preempt_count_add/sub和跟踪之间禁用IRQ
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/6.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/6.png)
 
 > IRQ（Interrupt Request，中断请求）是计算机硬件设备与处理器之间通信的一种机制，用于通知处理器设备需要其注意和处理某些任务。当硬件设备需要处理器的响应时，它会发送一个中断信号。处理器在处理完当前任务后，会暂停正在执行的操作，响应这个中断请求，处理中断产生的事件，然后恢复之前被暂停的操作
 
@@ -130,7 +130,7 @@ funtion对event和state的转换速度为O(1)，使用matrix也不会占用过�
 
 与上面一个例子相似，`preempt_disable_notrace()` 可能会隐藏一个不是不需要追踪的IRQ（如果它在另一个上下文中，是可以被追踪的）可能的解决方案是：使用每个CPU的计数器来计算可追踪的`preempt_disable/enable`，并根据计数器决定是否打印。
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/7.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/7.png)
 
 > `preempt_disable_notrace()` 是Linux内核中的一个函数，类似于`preempt_disable()`，它用于禁用抢占调度。不过，与`preempt_disable()`不同的是，`preempt_disable_notrace()`在禁用抢占调度时不会触发与之相关的跟踪点（tracepoint）。这意味着使用`preempt_disable_notrace()`函数时，跟踪工具（如Ftrace或perf）不会记录与禁用抢占调度相关的事件。
 
@@ -146,7 +146,7 @@ funtion对event和state的转换速度为O(1)，使用matrix也不会占用过�
 
 > Phoronix Test  Suite（PTS）是一个开源的、跨平台的基准测试和性能分析工具。它可以用于对计算机硬件、系统、软件的性能进行测试和分析。Phoronix  Test Suite旨在提供一个易于使用、自动化的基准测试过程，包括自动化的测试安装、执行和报告功能。Phoronix Test  Suite由Phoronix开发，支持多种操作系统，包括Linux、macOS和Windows。这个工具包主要用于评估计算机系统的吞吐量、延迟和其他性能指标。
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/5.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/5.png)
 
 相对于trace的方法，SWA-Model对大多数活动都有显著的性能提升
 
@@ -156,4 +156,4 @@ funtion对event和state的转换速度为O(1)，使用matrix也不会占用过�
 
 延迟被定义为在新激活过程中，由于**内核同步而导致具有最高实时优先级的线程所遭受的延迟**。Linux实践者使用cyclictest工具来测量这种延迟，同时使用rteval作为背景工作负载，产生密集的内核激活。
 
-![](../assets/img/pictures/2022-12-22-Eﬃcient_Formal_Veriﬁcation_for_the_Linux_Kernel/8.png)
+![](../assets/img/pictures/2022-12-22-Eﬃcient-Formal-Veriﬁcation-for-the-Linux-Kernel/8.png)
