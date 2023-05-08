@@ -1,5 +1,5 @@
 ---
-title: Approximation Algorithm Rectangular Strip Packing Problem
+title: Rectangular Strip Packing Problem
 author: jwimd
 date: 2022-05-24 11:00:00 +0800
 categories: [Algorithm, Approximation]
