@@ -196,9 +196,9 @@ For NFDH, consider the following matrix of width sequences
 
 The approximate ratios of NFDH, FFDH, and BFDH are the same as those mentioned in the class, which are not proved here.
 
-$$NFDH:\rho(2)\\
-FFDH:\rho(1.7)\\
-BFDH:\rho(1.7)\\$$
+$$NFDH:\rho(2)\\ $$
+$$FFDH:\rho(1.7)\\$$
+$$BFDH:\rho(1.7)\\$$
 
 For BF, the approximate ratio obtained by consulting the data is
 
