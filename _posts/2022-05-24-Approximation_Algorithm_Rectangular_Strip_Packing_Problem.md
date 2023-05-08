@@ -1,7 +1,7 @@
 ---
 title: Approximation Algorithm: Rectangular Strip Packing Problem
 author: jwimd
-date: 2022-05-24 10:00:00 +0800
+date: 2022-05-24 11:00:00 +0800
 categories: [Algorithm, Approximation]
 tags: [Algorithm, Approximation, Rectangular Strip Packing Problem, bin packing problem, approximate ratio, time complexity]
 math: true
