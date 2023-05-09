@@ -59,3 +59,7 @@ AI也有在搞（本人没什么动力 orz
 ![](https://img.shields.io/badge/Nodejs-vue3-blue)
 
 etc...
+
+## 项目仓库
+
+[Github Repository](https://github.com/jwimd/jwimd.github.io)

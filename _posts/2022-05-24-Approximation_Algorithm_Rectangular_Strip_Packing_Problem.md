@@ -215,3 +215,144 @@ $$NF:\rho(2)\\$$
 All five approximation algorithms perform well in test results and complexity and approximation ratio analysis. In practical applications, an appropriate approximation algorithm can be selected according to the requirements and the rectangular characteristics that need to be packed. 
 
 In order to make the result closer to the optimal solution, we can use random algorithms such as genetic algorithm to optimize the approximate solution obtained. In practical applications, the approximation algorithm that performs better can also be selected.
+
+## 5. Source Code
+
+```python
+from functools import cmp_to_key
+import numpy as py
+import random
+import pandas as pd
+import time
+import copy
+
+
+class StripPacking(object):  # 条带装箱问题类
+    def __init__(self):
+        self.binWidth = 0  # 箱子宽度
+        self.rectangleNum = 0
+        self.rectHeightLimit = 0
+        self.rectangleGroup = []
+
+    def customSorted(self, x, y):  # 定义比较逻辑，高的矩形排在低的之前
+        if x[1] < y[1]:
+            return 1
+        else:
+            return -1
+
+    def NFDH(self):
+        timeStart = time.time()
+        rectangleList = copy.deepcopy(self.rectangleGroup)
+        rectangleList = sorted(rectangleList, key=cmp_to_key(
+            self.customSorted))  # 深拷贝矩形列表，并按高度排序
+        floor = [self.binWidth, rectangleList[0][1]]  # 把箱子分为层数，最终按层装填
+        height = floor[1]
+        # NF策略是，检查当前箱子，如果能装下就装入，不能就装入下一个箱子
+        while len(rectangleList) > 0:  # 直到所有矩形都被装箱跳出
+            rectangle = rectangleList.pop(0)
+            if rectangle[0] <= floor[0] and rectangle[1] <= floor[1]:
+                # 如果能够装入就装入
+                floor[0] -= rectangle[0]
+                continue
+            else:
+                # 装不进去，开辟新层
+                floor[0] = self.binWidth - rectangle[0]
+                floor[1] = rectangle[1]
+                height += floor[1]
+        timeEnd = time.time()
+        return height, timeEnd-timeStart
+
+    def FFDH(self):
+        timeStart = time.time()
+        rectangleList = copy.deepcopy(self.rectangleGroup)
+        rectangleList = sorted(rectangleList, key=cmp_to_key(
+            self.customSorted))  # 深拷贝矩形列表，并按高度排序
+        floor = [self.binWidth, rectangleList[0][1]]  # 把箱子分为层数，最终按层装填
+        height = floor[1]
+        floorGroup = []  # 储存多个箱子
+        floorGroup.append(floor)
+        # FF策略是，从第一个箱子开始检查，如果能装下就装入，不能就装入下一个箱子，如果都不能就开新箱子
+        while len(rectangleList) > 0:  # 直到所有矩形都被装箱跳出
+            rectangle = rectangleList.pop(0)
+            flag = 1
+            for i in range(len(floorGroup)):  # 遍历所有箱子找到能装的第一个箱子
+                if rectangle[0] <= floorGroup[i][0] and rectangle[1] <= floorGroup[i][1]:
+                    # 如果能够装入就装入
+                    floorGroup[i][0] -= rectangle[0]
+                    flag = 0
+                    break
+            if flag:  # 所有箱子都不能装，开辟新层
+                floor = [self.binWidth - rectangle[0], rectangle[1]]
+                floorGroup.append(floor)
+                height += floor[1]
+        timeEnd = time.time()
+        return height, timeEnd-timeStart
+
+    def BFDH(self):
+        timeStart = time.time()
+        rectangleList = copy.deepcopy(self.rectangleGroup)
+        rectangleList = sorted(rectangleList, key=cmp_to_key(
+            self.customSorted))  # 深拷贝矩形列表，并按高度排序
+        floor = [self.binWidth, rectangleList[0][1]]  # 把箱子分为层数，最终按层装填
+        height = floor[1]
+        floorGroup = []  # 储存多个箱子
+        floorGroup.append(floor)
+        # BF策略是，从第一个箱子开始检查，检查到最后，找到最适合的箱子装入（剩余宽度最小但是可以装下)，如果都不能就开新箱子
+        while len(rectangleList) > 0:  # 直到所有矩形都被装箱跳出
+            rectangle = rectangleList.pop(0)
+            flag = 1
+            bestFloor = 0
+            minWidth = 0xffffff
+            for i in range(len(floorGroup)):  # 遍历所有箱子找到能装的箱子
+                if rectangle[0] <= floorGroup[i][0] and rectangle[1] <= floorGroup[i][1]:
+                    # 如果能够装入就装入
+                    if floorGroup[i][0] < minWidth:#寻找能装下的宽度剩余最小的箱子
+                        minWidth = floorGroup[i][0]
+                        bestFloor = i
+                    flag = 0
+            if flag:  # 所有箱子都不能装，开辟新层
+                floor = [self.binWidth - rectangle[0], rectangle[1]]
+                floorGroup.append(floor)
+                height += floor[1]
+            else:
+                floorGroup[bestFloor][0] -= rectangle[0]
+        timeEnd = time.time()
+        return height, timeEnd-timeStart
+        
+
+
+sp = StripPacking()
+sp.binWidth = float(input("binWidth:"))
+sp.rectangleNum = int(input("rectangleNum:"))
+sp.rectHeightLimit = float(input("rectHeightLimit:"))
+randomFlag = input("randomly create rectangle?(y/n)")
+if randomFlag == 'y':  # 随机输入箱子或者手动输入箱子
+    for i in range(sp.rectangleNum):
+        width = random.random() * sp.binWidth
+        height = random.random() * sp.rectHeightLimit
+        sp.rectangleGroup.append((width, height))
+else:
+    for i in range(sp.rectangleNum):
+        string = str(input())
+        l = [x for x in string.split(' ')]
+        width = l[0]
+        height = l[1]
+        if width > sp.binWidth:
+            print("error!")
+            i = i - 1
+            continue
+        if height > sp.rectHeightLimit:
+            print("error!")
+            i = i - 1
+            continue
+        sp.rectangleGroup.append((width, height))
+
+#各种近似算法的运行表现
+finalHeight, totalTime = sp.NFDH()
+print("NFDH height: %f time: %f" % (finalHeight, totalTime))
+finalHeight, totalTime = sp.FFDH()
+print("FFDH height: %f time: %f" % (finalHeight, totalTime))
+finalHeight, totalTime = sp.BFDH()
+print("BFDH height: %f time: %f" % (finalHeight, totalTime))
+```
+
