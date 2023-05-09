@@ -2,8 +2,8 @@
 title: Comparing Different Binary Search Trees
 author: jwimd
 date: 2022-03-24 14:00:00 +0800
-categories: [Data Structure, Binary Search Trees, AVL Tree, Splay Tree, Red-Black Tree, Time Complexity]
-tags: [Data Structure, 计算机图形学, OpenGL, C++]
+categories: [Data Structure, Trees]
+tags: [Data Structure, Binary Search Trees, AVL Tree, Splay Tree, Red-Black Tree, Time Complexity]
 math: true
 mermaid: true
 ---
@@ -57,7 +57,7 @@ if T is unbalanced then:
 
 Return the height from the bottom up to update, if the height of the left and right subtrees is unbalanced, determine the imbalance type, rotate separately, and then update the height again.
 
- ##### Insertion
+##### Insertion
 
 ```pascal
 Procedure Insertion(Tree T,int item):
