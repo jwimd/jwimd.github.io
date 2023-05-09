@@ -57,6 +57,8 @@ if T is unbalanced then:
 
 Return the height from the bottom up to update, if the height of the left and right subtrees is unbalanced, determine the imbalance type, rotate separately, and then update the height again.
 
+
+
 ##### Insertion
 
 ```pascal
@@ -127,7 +129,7 @@ do idx=BST_Search(T,item) then
 splay(T,idx)
 ```
 
-In order to search for a node, first find the location as you would in a BST search, and then Splay the node to the root,
+In order to search for a node, first find the location as you would in a BST search, and then Splay the node to the root.
 
 ##### Insertion
 
