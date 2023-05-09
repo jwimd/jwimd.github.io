@@ -3,7 +3,7 @@ title: Efficient Formal Verification for the Linux Kernel
 author: jwimd
 date: 2022-12-22 09:00:00 +0800
 categories: [Kernel Fuzz, Related Work]
-tags: [科研, 论文研读, Linux Kernel, Kernel Verification]
+tags: [科研, 论文研读, Linux Kernel, Kernel Verification, C]
 math: true
 mermaid: true
 #img_path: /pictures/2023-12-22-Efficient Formal Verification for the Linux Kernel/

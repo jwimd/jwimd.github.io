@@ -3,7 +3,7 @@ title: Rectangular Strip Packing Problem
 author: jwimd
 date: 2022-05-24 11:00:00 +0800
 categories: [Algorithm, Approximation]
-tags: [Algorithm, Approximation, Rectangular Strip Packing Problem, Bin Packing Problem, Approximate Ratio, Time Complexity]
+tags: [Algorithm, Approximation, Rectangular Strip Packing Problem, Bin Packing Problem, Approximate Ratio, Time Complexity, Python]
 math: true
 mermaid: true
 #img_path: /pictures/2023-12-22-Efficient Formal Verification for the Linux Kernel/

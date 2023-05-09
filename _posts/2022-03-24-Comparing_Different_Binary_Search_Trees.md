@@ -3,7 +3,7 @@ title: Comparing Different Binary Search Trees
 author: jwimd
 date: 2022-03-24 14:00:00 +0800
 categories: [Data Structure, Trees]
-tags: [Data Structure, Binary Search Trees, AVL Tree, Splay Tree, Red-Black Tree, Time Complexity]
+tags: [Data Structure, Binary Search Trees, AVL Tree, Splay Tree, Red-Black Tree, Time Complexity, C++]
 math: true
 mermaid: true
 ---
