@@ -43,7 +43,7 @@ typedef struct node *Tree;
 
 #### 2.1.2 Pseudocode
 
-##### Update
+**Update**
 
 ```pascal
 Procedure Update(Tree T):
@@ -57,9 +57,7 @@ if T is unbalanced then:
 
 Return the height from the bottom up to update, if the height of the left and right subtrees is unbalanced, determine the imbalance type, rotate separately, and then update the height again.
 
-
-
-##### Insertion
+**Insertion**
 
 ```pascal
 Procedure Insertion(Tree T,int item):
@@ -75,7 +73,7 @@ update(root)
 
 For the insert function, if the node is empty, a new node is created, assigned as the input value, and the new node address is returned. Otherwise, the input value is compared to the node value size, and the input value is inserted into the left or right subtree of the node according to the search tree rules.
 
-##### Deletion
+**Deletion**
 
 ```pascal
 Precedure Deletion(Tree T,int item):
@@ -121,7 +119,7 @@ typedef struct node *Tree;
 
 #### 2.2.2 Pseudocode
 
-##### Search
+**Search**
 
 ```pascal
 Procedure Search(Tree T,int item):
@@ -131,7 +129,7 @@ splay(T,idx)
 
 In order to search for a node, first find the location as you would in a BST search, and then Splay the node to the root.
 
-##### Insertion
+**Insertion**
 
 ```pascal
 Procedure Insertion(Tree T,int item):
@@ -141,7 +139,7 @@ splay(T,idx)
 
 The insert operation is also an addition of an Splay operation to the insertion of the BST.
 
-##### Deletion
+**Deletion**
 
 ```pascal
 Procedure Deletion(int item):
@@ -202,7 +200,7 @@ struct Red_Black_Tree_Node
 
 The operation of a red-black tree is essentially an implementation of the 2-3-4 tree conceptual model. We don't need to memorize the way the algorithm is written, but to understand the operation of the red-black tree through a conceptual model. The operations shown in the following articles are based on the specific operations of the red-black tree based on the convenience of writing code.
 
-##### Insertion
+**Insertion**
 
 ```pascal
 Procedure Insertion(Tree T):
@@ -253,7 +251,7 @@ Newly inserted nodes are all red.
 
    iv)The current node is the father's left child, and the father is the grandfather's right child (Left-Right). Processing ideas: a. Rotate the parent node to the right and use the parent node as the current node; b. Then use the Right Right case.
 
-##### Deletion
+**Deletion**
 
 ```pascal
 Precedure Deletion(Tree T):
@@ -278,7 +276,7 @@ Delete node X from the tree (delete by looking for successor nodes)
 2.  If X has only one child C, exchange the values of X and C, and then delete the new X. According to the red-black tree properties, X cannot be red at this time, because the red node either has no children or has two black children. At this time, the new X is used as the current node to judge the case 1.
 3. If X has two children, find the smallest node D from the successor, exchange the values of X and D, and then delete the new X. At this time, the new X is used as the current node to judge the case1 or 2.
 
-##### Deletion_Fix
+**Deletion_Fix**
 
 ```pascal
 Precedure Deletion_Fix(Tree T):
