@@ -1,7 +1,7 @@
 ---
 title: Huffman Codes
 author: jwimd
-date: 2022-04-20 12:00:00 +0800
+date: 2022-04-20 13:00:00 +0800
 categories: [Data Structure, Trees]
 tags: [Data Structure, Huffman Codes, CPP]
 math: true
