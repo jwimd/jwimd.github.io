@@ -1,5 +1,5 @@
 ---
-title: Causal Testing: Understanding Defects’ Root Causes
+title: Causal Testing -- Understanding Defects’ Root Causes
 author: jwimd
 date: 2022-05-13 20:00:00 +0800
 categories: [Kernel Fuzz, Related Work]
