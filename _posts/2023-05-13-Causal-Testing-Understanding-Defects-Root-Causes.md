@@ -208,8 +208,7 @@ Categorize defects into 5 categories
 
 ### 7.1 Pros and Cons
 
-updating
+
 
 ### 7.2 My Application
 
-updating
