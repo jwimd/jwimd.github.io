@@ -89,7 +89,127 @@ Focus on execution pass, needed to find which only differ **in few methods calli
 
 For each pair of **pass and fail** similar input, collects the **input** and **the execution traces** for each test it executes with differences highlighted
 
+## 4 Holmes: A Causal Testing Prototype
 
+### 4.1 Input & Test Case Generation
+
+1. We have **current test suite**
+2. Search all the current test suite to find **similar test** of original failing test. Create a string of input file, measure its approximation of similarity
+3. Generate new tests: two ways
+   - Test case generation: test case generation tool, **EvoSuite**. Generate test calling same method in same **class**(NumberUtilsTest -> NumberUtils)
+   - Input fuzzing: fuzzer **Peach and Fuzzer**. fuzz origin test and generated test to get valid input
+
+> Only complete Syntactic Differences measure. Execution Path Differences need to update
+
+> Class there is OOP's class according to paper
+
+### 4.2 Test Execution & Edit Distance Calculation
+
+1. Determine **data type** of parameters to decide how to calculate distance
+2. Different data type use different ways of calculation
+   - Numerical: calculates the absolute value of the arithmetic difference
+   - String: determines the Hamming distance and Levenshtein distance
+3. Find test satisfy original failing test's oracle, then **further minimize** the test differences: for each original parameters(mean test which we find efficient), **iteratively replacing** the value with new input value.
+4. Try to **find three similar passing tests** to compare to the failing one
+
+origin failing test -> more similar failing test -> 3 similar passing test
+
+> Hamming distance:  defined as the number of positions at which the corresponding symbols are different in the two strings. 
+
+> Levenshtein distance: defined as the minimum number of single-character edits (insertions,  deletions, or substitutions) required to transform one string into the other
+
+### 4.3 Communicating Root Causes to Developers
+
+Following will be showed:
+
+- Original failing test
+- Similar passing test
+- similar failing test
+- Execution Trace(may be stack)
+
+### 4.4 Holmes' Limitation
+
+- Need to **manually** match test and trace
+- For a test only support single parameter
+
+## 5 Causal Testing Effectiveness
+
+Three needs to know:
+
+- If is helpful to find root cause of defect
+- If is helpful to fix root cause of defect
+- If useful to user
+
+### 5.1 User Study Design
+
+7 defects from *Apache Commons Lang project*
+
+4 task use Holmes, 3 without
+
+Participant need to find and fix all the defects and answer some question about this task and feedback.
+
+### 5.2 Participants
+
+39 people from industry and academia
+
+### 5.3 User Study Findings
+
+- If is helpful to find root cause of defect
+
+  ![](../assets/img/pictures/2023-05-13-Causal-Testing-Understanding-Defects-Root-Causes/3.png)
+
+- If is helpful to fix root cause of defect
+
+  ![](../assets/img/pictures/2023-05-13-Causal-Testing-Understanding-Defects-Root-Causes/4.png)
+
+  ![](../assets/img/pictures/2023-05-13-Causal-Testing-Understanding-Defects-Root-Causes/5.png)
+
+- If useful to user
+
+Causal Testing is useful for both cause identification and defect resolution, and is complementary to other debugging tools.
+
+> do not read this part carefully QAQ(too long)
+
+Updating suggestion
+
+- add the ability to click on the output and jump to the related code in the IDE
+- between the passing and failing tests visibly more explicit
+- bolding the parts that are different from the original failing test
+
+## 6 Causal Testing Applicability to Real-world Defects
+
+330 defects used for test
+
+### 6.1 Evaluation Process
+
+Use Two version of code: **buggy and fixed**
+
+Run Holmes to find target failing test
+
+Use fixed version to check if Holmes find the root cause
+
+Evaluate the result to categorize defects
+
+### 6.2 Defect Applicability Categories
+
+Categorize defects into 5 categories
+
+- Works, useful, and fast
+- Works, useful, but slow(difference between test is large)
+- Works, but is not useful(useless to find root cause)
+- Will not work(find no result for pass and fail)
+- Could not make a determination(need project-specific domain knowledge to understand)
+
+### 6.3 Results 
+
+![](../assets/img/pictures/2023-05-13-Causal-Testing-Understanding-Defects-Root-Causes/6.png)
+
+## 7 My Opinion and Thought
+
+### 7.1 Pros and Cons
 
 updating
 
+### 7.2 My Application
+
+updating
