@@ -208,7 +208,22 @@ Categorize defects into 5 categories
 
 ### 7.1 Pros and Cons
 
+**Pros**:
 
+- Simply explain this paper's work is: **Use fuzz for debug**. This is a quite interesting idea. And I think this may work for many issue.
+- Giving a idea on how to compare input similarity of function input.
+- Giving a idea on how to minimize inputs' differences
+- Mostly importantly, give me a idea on how to **make fuzz more efficient**: by compare two input of finally different behaviors
+
+Cons:
+
+- Mostly apparently, Evaluation shows that this method used for debugging may not so make help.
+- I think the  evaluation scale is a little bit small
+- And for user, it may need sometime for them to **familiar to this tool**
+- I think the **trace compare** for test is quite important. Its a pity that author not accomplish it.
+- I think just string compare is too simple. There are more possible input thing to think: pointer, class, function, etc...
+- updating...
 
 ### 7.2 My Application
 
+Maybe can use for kernel fuzz. For making fuzz's input generating more efficient. And may help us to find defects' cause and fixing method.
