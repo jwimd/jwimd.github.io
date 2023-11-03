@@ -3,84 +3,90 @@
 # ----- Commons label -----
 
 layout:
-  post: 文章
-  category: 分类
-  tag: 标签
+  post: Post
+  category: Category
+  tag: Tag
 
 # The tabs of sidebar
 tabs:
   # format: <filename_without_extension>: <value>
-  home: 主页
-  categories: 分类
-  tags: 标签
-  archives: 日志
-  about: 说明
+  home: Home
+  categories: Categories
+  tags: Tags
+  archives: Archives
+  about: About
+  test: Test
 
 # the text displayed in the search bar & search results
 search:
-  hint: 搜索
-  cancel: 取消
-  no_results: 来到了没有知识的荒原捏
+  hint: search
+  cancel: Cancel
+  no_results: Oops! No results found.
 
 panel:
-  lastmod: 最近更新
-  trending_tags: 热门标签
-  toc: 文章内容
+  lastmod: Recently Updated
+  trending_tags: Trending Tags
+  toc: Contents
 
 copyright:
   # Shown at the bottom of the post
   license:
-    template: 本文由作者按照 :LICENSE_NAME 进行授权
+    template: This post is licensed under :LICENSE_NAME by the author.
     name: CC BY 4.0
     link: https://creativecommons.org/licenses/by/4.0/
 
   # Displayed in the footer
-  brief: 进行本站维护和更新
+  brief: Some rights reserved.
   verbose: >-
-    除非另有说明，本网站上的博客文章均由作者按照知识共享署名 4.0 国际 (CC BY 4.0) 许可协议进行授权。
+    Except where otherwise noted, the blog posts on this site are licensed
+    under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
 
-meta: 希望你拥有开心的一天！
+meta: Using the :THEME theme for :PLATFORM
 
 not_found:
-  statment: 抱歉，我放错了该 URL，或者它指向了不存在的内容
+  statment: Sorry, we've misplaced that URL or it's pointing to something that doesn't exist.
 
 notification:
-  update_found: 发现新版本的内容。
-  update: 更新
+  update_found: A new version of content is available.
+  update: Update
 
 # ----- Posts related labels -----
 
 post:
-  written_by: 作者
-  posted: 发表于
-  updated: 更新于
-  words: 字
-  pageview_measure: 次浏览
+  written_by: By
+  posted: Posted
+  updated: Updated
+  words: words
+  pageview_measure: views
   read_time:
-    unit: 分钟
-    prompt: 阅读
-  relate_posts: 相关文章
-  share: 分享
+    unit: min
+    prompt: read
+  relate_posts: Further Reading
+  share: Share
   button:
-    next: 下一篇
-    previous: 上一篇
+    next: Newer
+    previous: Older
     copy_code:
-      succeed: 已复制！
+      succeed: Copied!
     share_link:
-      title: 分享链接
-      succeed: 链接已复制！
-  # pinned prompt of posts list on homepage
-  pin_prompt: 置顶
+      title: Copy link
+      succeed: Link copied successfully!
 
 # Date time format.
 # See: <http://strftime.net/>, <https://day.js.org/docs/en/display/format>
 df:
   post:
-    strftime: '%Y/%m/%d'
-    dayjs: 'YYYY/MM/DD'
+    strftime: "%b %e, %Y"
+    dayjs: "ll"
+  archives:
+    strftime: "%b"
+    dayjs: "MMM"
 
 # categories page
 categories:
   category_measure:
-    singular:  个分类
-    plural:  篇文章
+    singular: category
+    plural: categories
+  post_measure:
+    singular: post
+    plural: posts
