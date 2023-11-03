@@ -11,7 +11,7 @@ Incoming PhD Student.
 
 Co-advised by ZGC National Lab
 
-If you have any things or questions to discuss, do not hesitate to contact me.
+If you have any things or questions to discuss. Do not hesitate to contact me.
 Email: [chenjiewei@zju.edu.cn](mailto:chenjiewei@zju.edu.cn)
 
 ## Research Interest
