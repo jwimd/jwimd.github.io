@@ -6,7 +6,7 @@ order: 4
 
 ## 关于我
 
-ZJU GIS本科在读(大四)
+ZJU GIS本科在读
 
 THU SE PhD(中关村国家实验室联培) 2024年9月入学
 
