@@ -2,8 +2,8 @@
 title: Hardware-Assisted Feedback Fuzzing for OS Kernels
 author: jwimd
 date: 2023-02-15 11:00:00 +0800
-categories: [Kernel Fuzz, Related Work]
-tags: [Research, Paper Reading, Linux Kernel, Fuzz, Framework, Go]
+categories: [Kernel Fuzz, Framework]
+tags: [Research, Paper Reading, Linux Kernel, Fuzz, Framework, USENIX Security 17]
 math: true
 mermaid: true
 ---

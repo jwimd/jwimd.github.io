@@ -2,8 +2,8 @@
 title: Causal Testing -- Understanding Defects’ Root Causes
 author: jwimd
 date: 2023-05-13 20:30:00 +0800
-categories: [Kernel Fuzz, Related Work]
-tags: [Research, Paper Reading, Fuzz, Debugger, Counterfactual Causality, Java]
+categories: [Kernel Fuzz, Feedback]
+tags: [Research, Paper Reading, Fuzz, Debugger, Counterfactual Causality, ICSE 2020]
 math: true
 mermaid: true
 ---
