@@ -7,7 +7,7 @@ order: 4
 
 Incoming PhD Student.
 
-[Formal Verification Lab](https://thufv.github.io/), [School of Software](https://www.thss.tsinghua.edu.cn/)@[Tsinghua University](https://www.sjtu.edu.cn/). 
+[Formal Verification Lab](https://thufv.github.io/), [School of Software](https://www.thss.tsinghua.edu.cn/)@[Tsinghua University](https://www.tsinghua.edu.cn/). 
 
 Co-advised by ZGC National Lab
 
