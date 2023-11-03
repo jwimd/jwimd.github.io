@@ -91,7 +91,7 @@ etc...
 
 ## 联系我
 
-你可以选择[邮件](mailto:chenjiewei@zju.edu.cn)来和我交流，我很乐意提供一些：
+你可以选择[邮件](mailto:chenjiewei@zju.edu.cn)来和我交流，我很乐意提供：
 
 - 跨专业保研经验
 - ZJU GIS & CS专业课吐槽
