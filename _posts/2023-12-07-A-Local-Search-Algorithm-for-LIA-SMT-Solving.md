@@ -20,16 +20,22 @@ The method introduced by this article is proposed by S Cai et al in [Local Searc
 
 Before we begin, you need to have some basic knowledge, like [SAT](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem), [SMT](https://en.wikipedia.org/wiki/Satisfiability_modulo_theories), their solving algorithms and any other thing you need to let you understand which I may not mention it below.
 
-We define our learning target: SMT(LIA) as:
+We define our learning target: *Linear Integer Arithmetic* as:
 
 **Definition 1.** *Linear Integer Arithmetic (LIA)*: 
 
 1. Define
+   $$
+   P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}
+   $$
+   which means $P$ is a set of boolean variable. We call $p\in P$ as *propositional atomic LIA formulae* 
 
-   $P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}$
+2. Define
+   $$
+   X=\{x_1,x_2,...,x_n|x_i\in \mathbb{D},i\le n \}
+   $$
+   which means $X$ is a set of integer-valued variables. 
 
-   $X=\{x_1,x_2,...,x_n|x_i\in \mathbb{D},i\le n \}$
+3. 
 
-   which means $P$ is a set of boolean variable and $X$ is a set of integer-valued variables
-
-2. 
+   
