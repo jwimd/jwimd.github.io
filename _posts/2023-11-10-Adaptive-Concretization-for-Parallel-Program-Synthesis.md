@@ -3,7 +3,7 @@ title: Adaptive Concretization for Parallel Program Synthesis
 author: jwimd
 date: 2023-11-10 08:00:00 +0800
 categories: [Paper Reading, SMT Solving]
-tags: [Research, Paper Reading, SMT Solving, Program Synthesis, CAV'16]
+tags: [Paper Reading, SMT Solving, Program Synthesis, CAV'16]
 math: true
 mermaid: true
 #img_path: /pictures/2023-11-10-Efficient Formal Verification for the Linux Kernel/

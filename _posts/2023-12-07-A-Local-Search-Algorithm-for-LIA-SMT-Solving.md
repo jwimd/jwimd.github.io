@@ -24,26 +24,21 @@ We define our learning target: *Linear Integer Arithmetic* as:
 
 **Definition 1.** *Linear Integer Arithmetic (LIA)*: 
 
-1. Define
-   $$
-   P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}
-   $$
-   which means $P$ is a set of boolean variable. We call $p\in P$ as *propositional atomic LIA formula*.
+Define
 
-   For example
+$P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}$
 
-2. Define
-   $$
-   X=\{x_1,x_2,...,x_n|x_i\in \mathbb{D},i\le n \}
-   $$
-   which means $X$ is a set of integer-valued variables. 
+which means $P$ is a set of boolean variable. We call $p\in P$ as *propositional atomic LIA formula*.
 
-   The think about a formula like
-   $$
-   \sum_ia_ix_i\bowtie k
-   $$
-   
+Define
 
-3. 
+$X=\{x_1,x_2,...,x_n|x_i\in \mathbb{D},i\le n \}$
 
-   
+which means $X$ is a set of integer-valued variables. 
+
+The think about a formula like
+
+$\sum_ia_ix_i\bowtie k\ |\ x_i\in X, \bowtie \in\{=,\le\},k,a_i \in \mathbb{Q}$
+
+
+
