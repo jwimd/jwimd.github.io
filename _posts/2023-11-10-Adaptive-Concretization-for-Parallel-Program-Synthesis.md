@@ -2,8 +2,8 @@
 title: Adaptive Concretization for Parallel Program Synthesis
 author: jwimd
 date: 2023-11-10 08:00:00 +0800
-categories: [EFSMT Improving, CEGIS Paraellel]
-tags: [Research, Paper Reading, SMT Solving, Program Synthesis, CAV]
+categories: [Paper Reading, SMT Solving]
+tags: [Research, Paper Reading, SMT Solving, Program Synthesis, CAV'16]
 math: true
 mermaid: true
 #img_path: /pictures/2023-11-10-Efficient Formal Verification for the Linux Kernel/
