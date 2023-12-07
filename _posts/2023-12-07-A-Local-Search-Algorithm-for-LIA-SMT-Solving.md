@@ -24,7 +24,7 @@ We define our learning target: *Linear Integer Arithmetic* as:
 
 **Definition 1.** *propositional atomic LIA formula*: 
 
-$p\in P=\{p_1,p_2,...,p_n\mid p_i\in\{\text{True},\text{False}\},i\le n \}$
+$p\in P=\{p_1,p_2,...,p_n\mid p_i\in\{true,false\},i\le n \}$
 
 **Definition 2.** *arithmetic atomic LIA formula*: 
 
@@ -33,3 +33,18 @@ $\sum_ia_ix_i\bowtie k\ \\ \text{where} \ x_i\in X=\{x_1,x_2,...,x_n\mid x_i\in 
 **Definition 3.** *LIA formula*: 
 
 $x\mid x\and y\mid x\or y \mid \lnot x\\ \text{where}\ x,y \in P \cup X$
+
+For general SAT solving, which is the base of most SMT solving algorithm, we have following definitions.
+
+**Definition 4.** *literal*: an atomic formula, or the negation of an atomic formula.
+
+**Definition 5.** *clause*: disjunction of a set of literals. 
+
+**Definition 6.** *conjunctive normal form(CNF)*: conjunction of a set of clauses
+
+To apply local search, we need *operator* to define how to modify the candidate solution. For boolean variables, obviously we have
+
+**Definition 7.** *flip*: 
+
+$filp(p)=\lnot p\ \text{where}\ p \in P$
+
