@@ -24,10 +24,12 @@ We define our learning target: SMT(LIA) as:
 
 **Definition 1.** *Linear Integer Arithmetic (LIA)*: 
 
-1. $P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}$
+1. Define
+
+   $P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}$
 
    $X=\{x_1,x_2,...,x_n|x_i\in \mathbb{D},i\le n \}$
 
-   
+   which means $P$ is a set of boolean variable and $X$ is a set of integer-valued variables
 
 2. 
