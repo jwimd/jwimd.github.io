@@ -22,23 +22,14 @@ Before we begin, you need to have some basic knowledge, like [SAT](https://en.wi
 
 We define our learning target: *Linear Integer Arithmetic* as:
 
-**Definition 1.** *Linear Integer Arithmetic (LIA)*: 
+**Definition 1.** *propositional atomic LIA formula*: 
 
-Define
+$p\in P=\{p_1,p_2,...,p_n\mid p_i\in\{\text{True},\text{False}\},i\le n \}$
 
-$P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}$
+**Definition 2.** *arithmetic atomic LIA formula*: 
 
-which means $P$ is a set of boolean variable. We call $p\in P$ as *propositional atomic LIA formula*.
+$\sum_ia_ix_i\bowtie k\ \\ \text{where} \ x_i\in X=\{x_1,x_2,...,x_n\mid x_i\in \mathbb{D},i\le n \},\\ \bowtie \in\{=,\le\},\\ k,a_i \in \mathbb{Q}$
 
-Define
+**Definition 3.** *LIA formula*: 
 
-$X=\{x_1,x_2,...,x_n|x_i\in \mathbb{D},i\le n \}$
-
-which means $X$ is a set of integer-valued variables. 
-
-The think about a formula like
-
-$\sum_ia_ix_i\bowtie k\ |\ x_i\in X, \bowtie \in\{=,\le\},k,a_i \in \mathbb{Q}$
-
-
-
+$x\mid x\and y\mid x\or y \mid \lnot x\\ \text{where}\ x,y \in P \cup X$
