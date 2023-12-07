@@ -28,13 +28,21 @@ We define our learning target: *Linear Integer Arithmetic* as:
    $$
    P=\{p_1,p_2,...,p_n|p_i\in\{\text{True},\text{False}\},i\le n \}
    $$
-   which means $P$ is a set of boolean variable. We call $p\in P$ as *propositional atomic LIA formulae* 
+   which means $P$ is a set of boolean variable. We call $p\in P$ as *propositional atomic LIA formula*.
+
+   For example
 
 2. Define
    $$
    X=\{x_1,x_2,...,x_n|x_i\in \mathbb{D},i\le n \}
    $$
    which means $X$ is a set of integer-valued variables. 
+
+   The think about a formula like
+   $$
+   \sum_ia_ix_i\bowtie k
+   $$
+   
 
 3. 
 
